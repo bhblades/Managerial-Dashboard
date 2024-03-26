@@ -83,6 +83,7 @@ $chartData = json_encode([
             alert(teamName + " cycle time: " + cycleTime + "%");
         }
     }
+
 </script>
 </body>
 </html>
