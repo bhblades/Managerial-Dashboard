@@ -1,8 +1,8 @@
 <?php
 // Sample data for team 1
-$team1Stories = 2;
+$team1Stories = 15;
 $team1TotalStories = 15;
-$team1Points = 10;
+$team1Points = 45;
 $team1TotalPoints = 45;
 
 // Sample data for team 2
