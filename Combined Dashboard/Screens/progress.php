@@ -89,7 +89,22 @@ function calculateProgressColor($value) {
         $team2ProgressColor = calculateProgressColor($team2ProgressValue);
         echo "progress#team2Progress[value]::-webkit-progress-value { background-color: $team2ProgressColor; }";
         ?>
+
+        body {
+            background-image: url('http://localhost/Managerial-Dashboard/images/Untitled presentation.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
     </style>
+
+
+    <script>
+        function displayPopup() {
+            alert("This screen displays the progress of both teams. For both team 1 and team 2 their user stories completed" +
+                "as well as story points completed are shown. This is then shown on the progress bar.");
+        }
+    </script>
 </head>
 <body>
 <div class="container">
@@ -108,6 +123,7 @@ function calculateProgressColor($value) {
             <div class="progress-text progress-text team2" id="team2PointsText">Story points completed: <?= $team2Points ?>/<?= $team2TotalPoints ?></div>
         </div>
     </div>
+    <button onclick="displayPopup()">Description of Progress</button>
 </div>
 </body>
 </html>
