@@ -13,7 +13,7 @@
             display: block;
         }
         body {
-            background-image: url('http://localhost/Managerial-Dashboard/images/Cycle Time Screen.png');
+            background-image: url('http://localhost/Managerial-Dashboard/images/Lead Time Screen.png');
             background-size: cover;
             background-repeat: no-repeat;
         }
@@ -33,8 +33,8 @@
 </head>
 <body>
 <div class="team-info">
-    <p class="team1-info">Team 1 cycle time: 50%</p>
-    <p class="team2-info">Team 2 cycle time: 60%</p>
+    <p class="team1-info">Team 1 lead time: 50%</p>
+    <p class="team2-info">Team 2 lead time: 60%</p>
 </div>
 <canvas id="cycleTimeChart"></canvas>
 
@@ -87,3 +87,4 @@ $chartData = json_encode([
 </script>
 </body>
 </html>
+

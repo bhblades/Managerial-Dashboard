@@ -1,13 +1,13 @@
 <?php
 
-$dsn = "mysql:host=localhost;db_name=managerial_dashboard";
+$host = '127.0.0.1';
+$dbname = "managerial_dashboard";
 $dbusername = "root";
-$dbpassword = "";
+$dbpassword = "rootroot";
 
 try {
-    $pdo = new PDO($dsn, $dbusername, $dbpassword);
+    $pdo = new PDO("mysql:host=$host;dbname=$dbname", $dbusername, $dbpassword);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch(PDOException $e) {
-    echo "Connection failed: " . $e->getMessage();
-
+    die("Connection Failed: ". $e->getMessage());
 }
