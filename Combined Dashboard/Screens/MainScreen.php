@@ -9,14 +9,6 @@
             background-image: url('http://localhost/Managerial-Dashboard/images/Main Screen.png');
             background-size: cover;
             background-repeat: no-repeat;
-            background-attachment: fixed;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            height: 100vh;
-            margin: 0;
-            color: black;
-            text-align: center;
         }
         h2 {
             font-size: 36px;
