@@ -30,20 +30,27 @@
             margin-left: 250px;
         }
     </style>
+
+    <script>
+        function displayPopup() {
+            alert("Lead Time is the total amount of time from the initiation of a task, feature, or user story" +
+                "until it is given to the stakeholders.");
+        }
+    </script>
 </head>
 <body>
 <div class="team-info">
     <p class="team1-info">Team 1 lead time: 50%</p>
-    <p class="team2-info">Team 2 lead time: 60%</p>
+    <p class="team2-info">Team 2 lead time: 50%</p>
 </div>
 <canvas id="cycleTimeChart"></canvas>
 
 <?php
-// Example data for cycle times
+// Hardcoded data for cycle times
 $team1CycleTime = 50;
 $team2CycleTime = 60;
 
-// Generate chart data dynamically
+// Generate chart
 $chartData = json_encode([
     'labels' => ['Team 1', 'Team 2'],
     'datasets' => [[
@@ -71,20 +78,20 @@ $chartData = json_encode([
         options: chartOptions
     });
 
-    // Function to handle chart click event
+    // Function to handle chart click
     function chartClickCallback(event, chartElements) {
         if (chartElements && chartElements.length > 0) {
-            var index = chartElements[0]._index; // Get index of clicked segment
-            var data = chartElements[0]._chart.data; // Get chart data
-            var teamName = data.labels[index]; // Get team name
-            var cycleTime = data.datasets[0].data[index]; // Get cycle time
+            var index = chartElements[0]._index;
+            var data = chartElements[0]._chart.data;
+            var teamName = data.labels[index];
+            var cycleTime = data.datasets[0].data[index];
 
-            // Display percentage
+            // Display percentages
             alert(teamName + " cycle time: " + cycleTime + "%");
         }
     }
-
 </script>
+<button onclick="displayPopup()">Lead Time Meaning</button>
 </body>
 </html>
 

@@ -41,6 +41,10 @@ $username = $_SESSION["user_username"];
 echo "<h2>Welcome to your combined dashboard, $username!</h2>"; // Display a welcome message with the username
 ?>
 
+<div class="visit-metrics">
+    <button onclick="location.href='MetricScreen.php';">Visit Combined Metric Page</button>
+</div>
+
 
 <div class="teams-section">
 

@@ -9,7 +9,7 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f0f0f0; /* Set a light gray background color */
+            background-color: #f0f0f0;
         }
         .container {
             max-width: 600px;
@@ -17,7 +17,7 @@
             padding: 20px;
             background-color: #fff;
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a light shadow */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
         .btn-container {
             text-align: center;
@@ -27,14 +27,14 @@
             margin: 5px;
             border: none;
             border-radius: 5px;
-            background-color: #007bff; /* Set blue background color */
+            background-color: #007bff;
             color: #fff;
             font-size: 16px;
             cursor: pointer;
-            transition: background-color 0.3s ease; /* Add a smooth transition */
+            transition: background-color 0.3s ease;
         }
         button:hover {
-            background-color: #0056b3; /* Darken the background color on hover */
+            background-color: #0056b3;
         }
     </style>
 </head>

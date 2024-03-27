@@ -79,12 +79,12 @@ function calculateProgressColor($value) {
             background-color: red; /* Default color */
         }
         <?php
-        // Dynamic color calculation for team 1 progress bar
+        // Determine color for team 1
         $team1ProgressValue = ($team1Stories / $team1TotalStories) * 100;
         $team1ProgressColor = calculateProgressColor($team1ProgressValue);
         echo "progress#team1Progress[value]::-webkit-progress-value { background-color: $team1ProgressColor; }";
 
-        // Dynamic color calculation for team 2 progress bar
+        // Determine color for team 2
         $team2ProgressValue = ($team2Stories / $team2TotalStories) * 100;
         $team2ProgressColor = calculateProgressColor($team2ProgressValue);
         echo "progress#team2Progress[value]::-webkit-progress-value { background-color: $team2ProgressColor; }";
@@ -97,7 +97,6 @@ function calculateProgressColor($value) {
         }
 
     </style>
-
 
     <script>
         function displayPopup() {
