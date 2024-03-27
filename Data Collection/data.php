@@ -1,39 +1,26 @@
 <?php
-require_once 'Vendor/guzzle-7.8/src/functions.php';
-require_once 'Vendor/guzzle-7.8/src/Handler/CurlFactory.php';
-require_once 'Vendor/guzzle-7.8/src/Handler/CurlMultiHandler.php';
-require_once 'Vendor/guzzle-7.8/src/Handler/Proxy.php';
-require_once 'Vendor/guzzle-7.8/src/Handler/StreamHandler.php';
-require_once 'Vendor/guzzle-7.8/src/Middleware.php';
-require_once 'Vendor/guzzle-7.8/src/PrepareBodyMiddleware.php';
-require_once 'Vendor/guzzle-7.8/src/RedirectMiddleware.php';
-require_once 'Vendor/guzzle-7.8/src/RetryMiddleware.php';
-require_once 'Vendor/guzzle-7.8/src/TransferStats.php';
-require_once 'Vendor/guzzle-7.8/src/Client.php';
-require_once 'Vendor/guzzle-7.8/src/functions.php';
-require_once 'Vendor/guzzle-7.8/src/functions.php';
-
-use GuzzleHttp\Client;
-use GuzzleHttp\Exception\GuzzleException;
-
-$url = 'https://dev.azure.com/bladesbh/Project1/_odata/v2.0';
+$url = 'https://dev.azure.com/bladesbh/Project1/_apis/wit/workitems/1?api-version=7.1-preview.3';
 
 $token = 'BLANK';
 
-$client = new Client([
-    'headers' => [
-        'Authorization' => 'Bearer ' .$token,
-        'Content-Type' => 'application/json',
-    ]
-]);
+$headers = [
+    'Authorization: Basic ' .base64_encode(":" . $token),
+    'Content-Type: application/json',
+];
 
-try {
-    $response = $client->request('GET', $url . 'WorkItems');
-    $data = json_decode($response->getBody()->getContents(), true);
+$ch = curl_init($url);
 
+curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+$response = curl_exec($ch);
+
+if ($response === false) {
+    echo 'cURL Error: ' . curl_error($ch);
+} else {
+    var_dump($response);
+    $data = json_decode($response, true);
     var_dump($data);
-} catch (Exception $e) {
-    echo 'Caught Exception: ', $e->getMessage(), "\n";
-} catch (GuzzleException $e) {
-    echo 'Caught Guzzle Exception: ', $e->getMessage(), "\n";
 }
+
+curl_close($ch);
